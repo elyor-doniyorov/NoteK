@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Note from './components/Note';
 import UserInput from './components/UserInput';
 import { useState } from 'react';
-import Footer from './components/Footer';
 
 function App() {
 
@@ -36,7 +35,6 @@ function App() {
         />
         ))}
       </div>
-      <Footer />
     </div>
   );
 }
