@@ -1,13 +1,13 @@
 import React from 'react';
 import './Note.css';
 
-function Note({title, tagline, content, onDelete, id}) {
+function Note({title, tagline, content, handleDeleteNote, id}) {
   return (
     <div className='note'>
       <h1>{title}</h1>
       <h3>{tagline}</h3>
       <p>{content}</p>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <button onClick={() => handleDeleteNote(id)}>Delete</button>
     </div>
   );
 }

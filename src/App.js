@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Note from './components/Note';
 import UserInput from './components/UserInput';
 import { useState, useEffect } from 'react';
+import NotesList from './components/NotesList';
 
 
 function App() {
@@ -33,18 +34,7 @@ function App() {
     <div>
       <Header />
       <UserInput onAdd={addNote} />
-      <div className='notesInGrid'>
-       {notes.map((note,index) => (
-        <Note 
-          key={index} 
-          id={index} 
-          title={note.title} 
-          tagline={note.tagline} 
-          content={note.content} 
-          onDelete={deleteNotes}
-        />
-        ))}
-      </div>
+      <NotesList notes={notes} handleDeleteNote={deleteNotes} handleAddNote={addNote} />
     </div>
   );
 }
