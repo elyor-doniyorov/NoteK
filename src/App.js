@@ -2,11 +2,21 @@ import './App.css';
 import Header from './components/Header';
 import Note from './components/Note';
 import UserInput from './components/UserInput';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 function App() {
 
-  const [notes, setNotes] = useState([]);
+  const savedNotes = localStorage.getItem("notes")
+    ? JSON.parse(localStorage.getItem("notes"))
+    : [];
+
+  const [notes, setNotes] = useState(savedNotes);
+
+  useEffect(() => {
+    const json = JSON.stringify(notes);
+    window.localStorage.setItem("notes", json);
+  }, [notes]);
 
   function addNote(newNote) {
     setNotes(prevValue => {
