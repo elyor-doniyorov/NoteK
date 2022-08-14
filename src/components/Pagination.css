@@ -6,12 +6,12 @@
 
 .pageNote {
   padding: 2px 6px;
-  border: 1px solid orange;
+  border: 1px solid #007bff;
   border-radius: 3px;
   list-style-type: none;
 }
 
 .pageLink {
   text-decoration: none;
-  color: orange;
+  color: #007bff;
 }
